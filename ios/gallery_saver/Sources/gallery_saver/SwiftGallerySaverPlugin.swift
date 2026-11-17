@@ -7,6 +7,10 @@ enum MediaType: Int {
     case video
 }
 
+// Exposed to Objective-C as `GallerySaverPlugin` (pubspec `pluginClass`), replacing
+// the Objective-C forwarding wrapper: Swift Package Manager targets cannot mix
+// Objective-C and Swift sources.
+@objc(GallerySaverPlugin)
 public class SwiftGallerySaverPlugin: NSObject, FlutterPlugin {
     let path = "path"
     let albumName = "albumName"
